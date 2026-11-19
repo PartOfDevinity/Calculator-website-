@@ -37,3 +37,42 @@ function calculate() {
         display.value = "Error";
     }
 }
+
+function scientific(type) {
+    let value = Number(display.value);
+
+    if (display.value.trim() === "") {
+        return;
+    }
+
+    let result;
+
+    switch (type) {
+        case "sin":
+            result = Math.sin(value * Math.PI / 180);
+            break;
+
+        case "cos":
+            result = Math.cos(value * Math.PI / 180);
+            break;
+
+        case "tan":
+            result = Math.tan(value * Math.PI / 180);
+            break;
+
+        case "sqrt":
+            result = Math.sqrt(value);
+            break;
+
+        case "square":
+            result = value * value;
+            break;
+
+        default:
+            return;
+    }
+
+    display.value = Number(result.toFixed(10));
+    
+}
+
